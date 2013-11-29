@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="5dp">    
+
+        <TextView
+	        android:id="@+id/username"
+	        android:layout_width="500dp"
+	        android:layout_height="wrap_content"
+	        android:gravity="left"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:textColor="@color/TitleGreen"
+	        android:textSize="@dimen/normal_text_size" />
+	           
+	    <TextView
+	        android:id="@+id/points"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:singleLine="true"
+	        android:textColor="@color/DarkGrey"
+	        android:textSize="@dimen/big_text_size" />
+</RelativeLayout>

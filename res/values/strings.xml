@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mini Games</string>
+    <string name="hello">Choose your level:</string>
+    <string name="btn_level_1">Amateur</string>
+    <string name="btn_level_2">Normal</string>
+    <string name="btn_level_3">Hard</string>
+    <string name="btn_ranking">Ranking</string>
+    
+    <string name="user_email_hint">Email</string>
+    <string name="user_name_hint">Name</string>
+    
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="dialog_text">Você fez %@ pontos! Parabéns! \n Preencha seus dados para entrar no ranking.</string>
+</resources>
