@@ -20,8 +20,6 @@ import android.widget.TextView;
 @EFragment
 public class FinishGameDialog extends DialogFragment {
 
-	//private EditText username;
-	//private EditText userEmail;
 	private int points;
 	private int bonusPerSecond;
 	
@@ -35,6 +33,10 @@ public class FinishGameDialog extends DialogFragment {
 		
 	}
 	
+	public static String getName() {
+		return "FinishGameDialog";
+	}
+	
 	public static FinishGameDialog getInstance(int points, long millisecondsLeft, int level) {
 		FinishGameDialog userDataForm = new FinishGameDialog();
 		Bundle args = new Bundle();
@@ -42,7 +44,7 @@ public class FinishGameDialog extends DialogFragment {
 	    args.putInt("secondsLeft", (int)(millisecondsLeft/1000));
 	    args.putInt("level", level);
 		userDataForm.setArguments(args);
-		
+		userDataForm.setCancelable(false);
 		return userDataForm;
 	}
 	
@@ -73,7 +75,8 @@ public class FinishGameDialog extends DialogFragment {
 	    textDetails = (TextView) layoutView.findViewById(R.id.finish_game_score);
 	    textDetails.setText(text);
 	    if (secondsLeft > 0) {
-	    	textDetails.postDelayed(new AddBonusPointsRunnable(points, bonusPerSecond, secondsLeft), 1000);
+	    	addBonusRunnable = new AddBonusPointsRunnable(points, bonusPerSecond, secondsLeft);
+	    	textDetails.postDelayed(addBonusRunnable, 1000);
 	    }
 	    
 	    // Inflate and set the layout for the dialog
@@ -111,9 +114,17 @@ public class FinishGameDialog extends DialogFragment {
         }
     }
     
+    @Override
+    public void dismiss() {
+    	if (addBonusRunnable != null) {
+    		addBonusRunnable.currentSecondsLeft = 0;
+    		textDetails.removeCallbacks(addBonusRunnable);
+    	}
+    	super.dismiss();
+    }
+    
     @UiThread
     void addBonusPoints(int oldPoints, int bonusPoints) {
-    	Log.i("BonusPoints", "Adding");
     	this.points = oldPoints + bonusPoints;
     	textDetails.setText(this.points+"");
     }
@@ -121,20 +132,20 @@ public class FinishGameDialog extends DialogFragment {
     class AddBonusPointsRunnable implements Runnable {
 		int currentPoints;
 		int bonusPerSecond;
-		long currentSecondsLeft;
+		public long currentSecondsLeft;
 		AddBonusPointsRunnable(int currentPoints, int bonusPerSecond, long secondsLeft) { this.currentPoints = currentPoints; this.bonusPerSecond = bonusPerSecond; this.currentSecondsLeft = secondsLeft;}
         public void run() {
         	addBonusPoints(currentPoints, bonusPerSecond);
         	currentPoints += this.bonusPerSecond;
         	currentSecondsLeft--;
-        	Log.i("SecondsLeft", ""+currentSecondsLeft);
         	if (currentSecondsLeft > 0) {
         		textDetails.postDelayed(this, 100);
         	} else {
         		textDetails.removeCallbacks(this);
-        		Log.i("FinalRun", "Stopped");
         	}
         }
     }
-
+    
+    
+    AddBonusPointsRunnable addBonusRunnable;
 }

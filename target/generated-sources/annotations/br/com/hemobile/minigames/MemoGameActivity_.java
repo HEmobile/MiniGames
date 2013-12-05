@@ -38,8 +38,8 @@ public final class MemoGameActivity_
     }
 
     private void afterSetContentView_() {
-        gameContainer = ((RelativeLayout) findViewById(br.com.hemobile.minigames.R.id.gameContainer));
         gridView = ((GridView) findViewById(br.com.hemobile.minigames.R.id.gridView));
+        gameContainer = ((RelativeLayout) findViewById(br.com.hemobile.minigames.R.id.gameContainer));
         init();
         baseInit();
     }

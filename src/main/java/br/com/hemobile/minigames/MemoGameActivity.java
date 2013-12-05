@@ -128,7 +128,7 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
 	@UiThread
 	void finishGame() {
 		DialogFragment dialog = FinishGameDialog.getInstance(Integer.valueOf(score.getText().toString()), millisecondsLeft, level);
-		dialog.show(getFragmentManager(), "Finish Game");
+		dialog.show(getFragmentManager(), FinishGameDialog.getName());
 	}
 	
 	void finishedRightCardsAnimation() {
