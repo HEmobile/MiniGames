@@ -3,25 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
-    android:layout_marginTop="20dp" >
+    android:layout_marginLeft="@dimen/menu_container_side_margin"
+    android:layout_marginRight="@dimen/menu_container_side_margin"
+    android:layout_marginTop="@dimen/menu_container_top_margin" >
 
     <TextView
         android:id="@+id/hello_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/hello"
+        android:text="@string/choose_level_text"
         android:layout_alignParentTop="true"
         android:textColor="@color/White"
-        android:textSize="20dp" />
+        android:textSize="@dimen/header_text_size" />
 
     <Button
         android:id="@+id/btnLevel1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/menu_level_btn_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/hello_view"
         android:text="@string/btn_level_1" />
@@ -30,7 +30,7 @@
         android:id="@+id/btnLevel2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/menu_level_btn_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/btnLevel1"
         android:text="@string/btn_level_2" />
@@ -39,7 +39,7 @@
         android:id="@+id/btnLevel3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/menu_level_btn_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/btnLevel2"
         android:text="@string/btn_level_3" />
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/btnLevel3"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/menu_other_btn_separator"
         android:src="@drawable/main_logo"
         android:contentDescription="@string/main_logo_description" />
     
@@ -58,7 +58,7 @@
         android:id="@+id/btnRanking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/menu_other_btn_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/mainLogo"
         android:text="@string/btn_ranking" />
@@ -67,7 +67,7 @@
         android:id="@+id/btnOptions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/menu_other_btn_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/btnRanking"
         android:text="@string/btn_options" />

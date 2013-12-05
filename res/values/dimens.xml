@@ -1,16 +1,42 @@
 <resources>
 	<!-- Body Texts -->
-    <dimen name="big_text_size">16dp</dimen>
-    <dimen name="normal_text_size">14dp</dimen>
-    <dimen name="score_text_size">20dp</dimen>
+	<dimen name="header_text_size">20sp</dimen>
+    <dimen name="big_text_size">16sp</dimen>
+    <dimen name="normal_text_size">14sp</dimen>
+    <dimen name="score_text_size">20sp</dimen>
     
     <!-- Others -->
-    <dimen name="finish_text_box">35dp</dimen>
+    <dimen name="finish_text_box">30dp</dimen>
+    
     <!-- ActionBar Texts -->
-    <dimen name="bar_big_text">18dp</dimen>
-    <dimen name="bar_normal_text">16dp</dimen>
+    <dimen name="bar_big_text">18sp</dimen>
+    <dimen name="bar_normal_text">16sp</dimen>
     
     <!-- Constants -->
     <dimen name="card_side_size">144dp</dimen>
     
+    <!-- Menu Activity Layout -->
+    <dimen name="menu_container_side_margin">30dp</dimen>
+    <dimen name="menu_container_top_margin">20dp</dimen>
+    <dimen name="menu_level_btn_separator">10dp</dimen>
+    <dimen name="menu_other_btn_separator">20dp</dimen>
+    
+    <!-- Finish Game Fragment Layout -->
+    <dimen name="finish_game_text_separator">3dp</dimen>
+    <dimen name="finish_game_top_margin">12dp</dimen>
+    <dimen name="finish_game_other_margins">4dp</dimen>
+    
+    <!-- MemoGame Activity Layout -->
+    <dimen name="memo_grid_margin">15dp</dimen>
+    <dimen name="memo_grid_vertical_spacing">20dp</dimen>
+    <dimen name="memo_grid_horizontal_spacing">26dp</dimen>
+    
+    <!-- Options Activity Layout -->
+    <dimen name="options_container_margins">30dp</dimen>
+    <dimen name="options_btns_separator">10dp</dimen>
+    
+    <!-- Rankings Activity Layout -->
+    <dimen name="rankings_row_padding">15dp</dimen>
+    <dimen name="rankings_margin">10dp</dimen>
+    <dimen name="rankings_padding">5dp</dimen>
 </resources>

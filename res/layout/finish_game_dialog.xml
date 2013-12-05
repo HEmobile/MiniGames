@@ -6,6 +6,7 @@
     <RelativeLayout 
         android:layout_width="wrap_content"
 	    android:layout_height="@dimen/finish_text_box"
+	    android:layout_marginTop="@dimen/finish_game_top_margin"
 	    android:layout_gravity="center_horizontal"
 	    android:gravity="center_horizontal">
 	    <TextView android:id="@+id/finish_game_text1"
@@ -15,7 +16,7 @@
 	        android:gravity="center_vertical"
 	        android:textSize="@dimen/big_text_size"
 	        android:text="@string/dialog_text1"
-	        android:layout_margin="3dp"/>
+	        android:layout_margin="@dimen/finish_game_text_separator"/>
 	    <TextView android:id="@+id/finish_game_score"
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
@@ -27,7 +28,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="match_parent"
 	        android:gravity="center_vertical"
-	        android:layout_margin="3dp"
+	        android:layout_margin="@dimen/finish_game_text_separator"
 	        android:layout_toRightOf="@id/finish_game_score"
 	        android:textSize="@dimen/big_text_size"
 	        android:text="@string/dialog_text2"/>
@@ -44,10 +45,10 @@
         android:inputType="textPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="@dimen/finish_game_top_margin"
+        android:layout_marginLeft="@dimen/finish_game_other_margins"
+        android:layout_marginRight="@dimen/finish_game_other_margins"
+        android:layout_marginBottom="@dimen/finish_game_other_margins"
         android:hint="@string/user_name_hint" />
     
     <EditText
@@ -55,9 +56,9 @@
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginTop="@dimen/finish_game_top_margin"
+        android:layout_marginLeft="@dimen/finish_game_other_margins"
+        android:layout_marginRight="@dimen/finish_game_other_margins"
+        android:layout_marginBottom="@dimen/finish_game_other_margins"
         android:hint="@string/user_email_hint" />
 </LinearLayout>

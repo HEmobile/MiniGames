@@ -8,7 +8,6 @@ import br.com.hemobile.minigames.model.GameResult;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.util.Log;
 
 public class DataLayer {
 

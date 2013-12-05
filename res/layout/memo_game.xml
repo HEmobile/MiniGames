@@ -7,13 +7,13 @@
 
 	<GridView
 	    android:id="@+id/gridView"
-	    android:layout_margin="15dp"
+	    android:layout_margin="@dimen/memo_grid_margin"
 	    android:layout_width="match_parent" 
 	    android:layout_height="match_parent"
 	    android:columnWidth="@dimen/card_side_size"
 	    android:numColumns="auto_fit"
-	    android:verticalSpacing="20dp"
-	    android:horizontalSpacing="26dp"
+	    android:verticalSpacing="@dimen/memo_grid_vertical_spacing"
+	    android:horizontalSpacing="@dimen/memo_grid_horizontal_spacing"
 	    android:stretchMode="columnWidth"
 	    android:gravity="center"
 	/>

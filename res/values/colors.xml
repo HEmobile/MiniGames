@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
- <color name="DarkGreen">#173300</color>
- <color name="MediumGreen">#519700</color>
- <color name="LightGreen">#8ECF00</color>
- <color name="TitleGreen">#00A273</color>
- <color name="DarkGrey">#777777</color>
- <color name="LightGrey">#CCCCCC</color>
- <color name="GreenGrey">#F9FCF1</color>
- <color name="BorderGrey">#e7e7e7</color>
- <color name="Red">#FF0000</color>
- <color name="White50">#80FFFFFF</color>
- <color name="Black">#000000</color>
- <color name="ChartGreen">#1f7b70</color>
- <color name="ChartYellow">#ffc600</color>
- <color name="ChartRed">#e94500</color>
- 
  <!-- HE:mobile Colors -->
  <color name="HERed">#A01E21</color>
  <color name="HEGrey">#454545</color>
@@ -23,4 +8,5 @@
  <color name="OddRowGrey">#F5F5F5</color>
  <color name="EvenRowGrey">#E1E1E1</color>
  <color name="White">#FFFFFF</color>
+ <color name="LightGrey">#EEEEEE</color>
 </resources>

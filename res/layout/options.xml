@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
-    android:layout_marginTop="30dp" >
+    android:layout_marginLeft="@dimen/options_container_margins"
+    android:layout_marginRight="@dimen/options_container_margins"
+    android:layout_marginTop="@dimen/options_container_margins" >
 	<!-- 
     <TextView
         android:id="@+id/hello_view"
@@ -20,7 +20,7 @@
         android:id="@+id/btnRestartRankings"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/options_btns_separator"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentTop="true"
         android:text="@string/btn_restart_rankings" />
@@ -29,7 +29,7 @@
         android:id="@+id/btnEmailContactList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/options_btns_separator"
         android:layout_gravity="center_horizontal"
         android:layout_below="@id/btnRestartRankings"
         android:text="@string/btn_email_contact_list" />

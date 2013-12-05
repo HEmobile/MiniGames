@@ -1,10 +1,8 @@
 package br.com.hemobile.minigames;
 
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.widget.TextView;
-import br.com.hemobile.minigames.fragments.FinishGameDialog;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;

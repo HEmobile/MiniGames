@@ -6,8 +6,6 @@ import com.googlecode.androidannotations.annotations.AfterViews;
 import com.googlecode.androidannotations.annotations.Click;
 import com.googlecode.androidannotations.annotations.EActivity;
 
-import android.content.Intent;
-import android.util.Log;
 import br.com.hemobile.gui.BaseActivity;
 import br.com.hemobile.minigames.db.DataLayer;
 import br.com.hemobile.minigames.fragments.BooleanDialog;

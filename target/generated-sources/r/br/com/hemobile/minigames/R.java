@@ -11,46 +11,59 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int Black=0x7f04000a;
-        public static final int BorderGrey=0x7f040007;
-        public static final int ChartGreen=0x7f04000b;
-        public static final int ChartRed=0x7f04000d;
-        public static final int ChartYellow=0x7f04000c;
-        public static final int DarkGreen=0x7f040000;
-        public static final int DarkGrey=0x7f040004;
-        public static final int EvenRowGrey=0x7f040011;
-        public static final int GreenGrey=0x7f040006;
-        public static final int HEGrey=0x7f04000f;
+        public static final int EvenRowGrey=0x7f040003;
+        public static final int HEGrey=0x7f040001;
         /**  HE:mobile Colors 
          */
-        public static final int HERed=0x7f04000e;
-        public static final int LightGreen=0x7f040002;
+        public static final int HERed=0x7f040000;
         public static final int LightGrey=0x7f040005;
-        public static final int MediumGreen=0x7f040001;
         /**  App Custom colors 
          */
-        public static final int OddRowGrey=0x7f040010;
-        public static final int Red=0x7f040008;
-        public static final int TitleGreen=0x7f040003;
-        public static final int White=0x7f040012;
-        public static final int White50=0x7f040009;
+        public static final int OddRowGrey=0x7f040002;
+        public static final int White=0x7f040004;
     }
     public static final class dimen {
         /**  ActionBar Texts 
          */
-        public static final int bar_big_text=0x7f050004;
-        public static final int bar_normal_text=0x7f050005;
-        /**  Body Texts 
-         */
-        public static final int big_text_size=0x7f050000;
+        public static final int bar_big_text=0x7f050005;
+        public static final int bar_normal_text=0x7f050006;
+        public static final int big_text_size=0x7f050001;
         /**  Constants 
          */
-        public static final int card_side_size=0x7f050006;
+        public static final int card_side_size=0x7f050007;
+        public static final int finish_game_other_margins=0x7f05000e;
+        /**  Finish Game Fragment Layout 
+         */
+        public static final int finish_game_text_separator=0x7f05000c;
+        public static final int finish_game_top_margin=0x7f05000d;
         /**  Others 
          */
-        public static final int finish_text_box=0x7f050003;
-        public static final int normal_text_size=0x7f050001;
-        public static final int score_text_size=0x7f050002;
+        public static final int finish_text_box=0x7f050004;
+        /**  Body Texts 
+         */
+        public static final int header_text_size=0x7f050000;
+        public static final int memo_grid_horizontal_spacing=0x7f050011;
+        /**  MemoGame Activity Layout 
+         */
+        public static final int memo_grid_margin=0x7f05000f;
+        public static final int memo_grid_vertical_spacing=0x7f050010;
+        /**  Menu Activity Layout 
+         */
+        public static final int menu_container_side_margin=0x7f050008;
+        public static final int menu_container_top_margin=0x7f050009;
+        public static final int menu_level_btn_separator=0x7f05000a;
+        public static final int menu_other_btn_separator=0x7f05000b;
+        public static final int normal_text_size=0x7f050002;
+        public static final int options_btns_separator=0x7f050013;
+        /**  Options Activity Layout 
+         */
+        public static final int options_container_margins=0x7f050012;
+        public static final int rankings_margin=0x7f050015;
+        public static final int rankings_padding=0x7f050016;
+        /**  Rankings Activity Layout 
+         */
+        public static final int rankings_row_padding=0x7f050014;
+        public static final int score_text_size=0x7f050003;
     }
     public static final class drawable {
         public static final int card_back=0x7f020000;
@@ -138,9 +151,13 @@ public final class R {
         public static final int score_bar=0x7f090000;
     }
     public static final class string {
+        /**  Menu Activity Strings 
+         */
         public static final int app_name=0x7f070000;
         public static final int bonus_starting_value=0x7f070012;
         public static final int boolean_dialog_cancel=0x7f070015;
+        /**  Boolean Dialog Strings 
+         */
         public static final int boolean_dialog_ok=0x7f070014;
         public static final int btn_email_contact_list=0x7f070008;
         public static final int btn_level_1=0x7f070002;
@@ -148,16 +165,20 @@ public final class R {
         public static final int btn_level_3=0x7f070004;
         public static final int btn_options=0x7f070006;
         public static final int btn_ranking=0x7f070005;
+        /**  Options Activity String 
+         */
         public static final int btn_restart_rankings=0x7f070007;
         public static final int card_back=0x7f07001b;
         public static final int card_front=0x7f07001a;
+        public static final int choose_level_text=0x7f070001;
         public static final int dialog_cancel=0x7f07000c;
         public static final int dialog_ok=0x7f07000b;
         public static final int dialog_text1=0x7f07000d;
         public static final int dialog_text2=0x7f07000e;
         public static final int dialog_text3=0x7f07000f;
+        /**  Email Strings 
+         */
         public static final int email_contact_text=0x7f070018;
-        public static final int hello=0x7f070001;
         public static final int leave_game_confirmation=0x7f070016;
         /**  Image Content Description 
          */
@@ -165,7 +186,11 @@ public final class R {
         public static final int memo_activity_title=0x7f070013;
         public static final int points_starting_value=0x7f070011;
         public static final int restart_rankings_text=0x7f070017;
+        /**  MemoGame Activity Strings 
+         */
         public static final int timer_starting_value=0x7f070010;
+        /**  Finish Game Fragment Strings 
+         */
         public static final int user_email_hint=0x7f070009;
         public static final int user_name_hint=0x7f07000a;
     }

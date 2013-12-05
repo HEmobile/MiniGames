@@ -115,12 +115,14 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
 			    TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - 
 			    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds))
 			);
-		timer.setText(time);
+		if (timer != null) {
+			timer.setText(time);
+		}
 	}
 	
 	@UiThread
 	void addPoints(){
-		AnimationFactory.fadeInThenOut(bonus, 500, 300, false);
+		AnimationFactory.fadeInThenOut(bonus, 500, 500, false);
 	}
 	
 	@UiThread

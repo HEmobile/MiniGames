@@ -23,7 +23,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:paddingRight="5dp"
-        android:textColor="@color/HEGrey"
+        android:textColor="@color/LightGrey"
         android:textSize="@dimen/bar_normal_text"
         android:text="@string/bonus_starting_value"
         android:visibility="invisible"/>

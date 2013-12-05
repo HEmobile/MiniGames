@@ -38,8 +38,8 @@ public final class MemoGameActivity_
     }
 
     private void afterSetContentView_() {
-        gridView = ((GridView) findViewById(br.com.hemobile.minigames.R.id.gridView));
         gameContainer = ((RelativeLayout) findViewById(br.com.hemobile.minigames.R.id.gameContainer));
+        gridView = ((GridView) findViewById(br.com.hemobile.minigames.R.id.gridView));
         init();
         baseInit();
     }
@@ -110,14 +110,14 @@ public final class MemoGameActivity_
     }
 
     @Override
-    public void addPoints() {
+    public void finishGame() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
                 try {
-                    MemoGameActivity_.super.addPoints();
+                    MemoGameActivity_.super.finishGame();
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }
@@ -128,14 +128,14 @@ public final class MemoGameActivity_
     }
 
     @Override
-    public void finishGame() {
+    public void addPoints() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
                 try {
-                    MemoGameActivity_.super.finishGame();
+                    MemoGameActivity_.super.addPoints();
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }
