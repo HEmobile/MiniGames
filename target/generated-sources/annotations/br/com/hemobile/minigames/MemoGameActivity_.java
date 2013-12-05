@@ -92,14 +92,14 @@ public final class MemoGameActivity_
     }
 
     @Override
-    public void displayTimeLeft(final long milliSeconds) {
+    public void finishGame() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
                 try {
-                    MemoGameActivity_.super.displayTimeLeft(milliSeconds);
+                    MemoGameActivity_.super.finishGame();
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }
@@ -110,14 +110,14 @@ public final class MemoGameActivity_
     }
 
     @Override
-    public void finishGame() {
+    public void displayTimeLeft(final long milliSeconds) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
                 try {
-                    MemoGameActivity_.super.finishGame();
+                    MemoGameActivity_.super.displayTimeLeft(milliSeconds);
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }

@@ -32,9 +32,9 @@ public final class RankingsActivity_
     }
 
     private void afterSetContentView_() {
-        level2Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level2Rankings));
-        level3Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level3Rankings));
         level1Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level1Rankings));
+        level3Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level3Rankings));
+        level2Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level2Rankings));
         init();
         baseInit();
     }

@@ -34,36 +34,6 @@ public final class MenuActivity_
     private void afterSetContentView_() {
         helloView = ((TextView) findViewById(id.hello_view));
         {
-            View view = findViewById(id.btnRanking);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MenuActivity_.this.btnRanking();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            View view = findViewById(id.btnLevel1);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MenuActivity_.this.btnLevel1();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = findViewById(id.btnOptions);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -72,6 +42,21 @@ public final class MenuActivity_
                     @Override
                     public void onClick(View view) {
                         MenuActivity_.this.btnOptions();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btnRanking);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MenuActivity_.this.btnRanking();
                     }
 
                 }
@@ -102,6 +87,21 @@ public final class MenuActivity_
                     @Override
                     public void onClick(View view) {
                         MenuActivity_.this.btnLevel2();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btnLevel1);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MenuActivity_.this.btnLevel1();
                     }
 
                 }
