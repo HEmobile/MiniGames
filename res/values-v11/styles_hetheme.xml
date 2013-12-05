@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="ButtonHETheme" parent="android:Widget.Holo.Button">
+	  <item name="android:background">@drawable/hetheme_btn_default_holo_dark</item>
+  </style>
+
+  <style name="ImageButtonHETheme" parent="android:Widget.Holo.ImageButton">
+	  <item name="android:background">@drawable/hetheme_btn_default_holo_dark</item>
+  </style>
+  
+  <style name="ActionBarHETheme" parent="@android:style/Widget.Holo.ActionBar">
+	  <item name="android:background">@color/HERed</item>
+  </style>
+
+</resources>

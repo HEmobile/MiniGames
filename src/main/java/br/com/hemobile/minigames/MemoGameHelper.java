@@ -10,13 +10,13 @@ public class MemoGameHelper {
 		int numberOfCards;
 		switch (level) {
 		case 1:
-			numberOfCards = 2;
-			break;
-		case 2:
 			numberOfCards = 6;
 			break;
+		case 2:
+			numberOfCards = 10;
+			break;
 		case 3:
-			numberOfCards = 8;
+			numberOfCards = 14;
 			break;
 		default:
 			numberOfCards = 4;

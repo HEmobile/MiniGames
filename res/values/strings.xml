@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Mini Games</string>
+    <string name="app_name">Memory, the Game</string>
     <string name="hello">Choose your level:</string>
     <string name="btn_level_1">Amateur</string>
     <string name="btn_level_2">Normal</string>
@@ -16,7 +16,9 @@
     
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancelar</string>
-    <string name="dialog_text">Você fez %@ pontos! Parabéns! \n Preencha seus dados para entrar no ranking.</string>
+    <string name="dialog_text1">Você fez </string>
+    <string name="dialog_text2"> pontos! Parabéns!</string>
+    <string name="dialog_text3">Preencha seus dados para entrar no ranking.</string>
     
     <string name="timer_starting_value">10:00</string>
     <string name="points_starting_value">0000000</string>
@@ -27,6 +29,13 @@
     <string name="boolean_dialog_ok">OK</string>
     <string name="boolean_dialog_cancel">Cancel</string>
     
+    <string name="leave_game_confirmation">Você está abandonando o jogo atual, e todos seus pontos serão perdidos.</string>
     <string name="restart_rankings_text">Todos os dados de jogos serão perdidos e os rankings serão preenchidos pelos dados padrão.</string>
     <string name="email_contact_text">Lista de Contatos: \n\n</string>
+    
+    
+    <!-- Image Content Description -->
+    <string name="main_logo_description">HE:mobile</string>
+    <string name="card_front">Frente da carta</string>
+    <string name="card_back">Fundo da carta</string>
 </resources>

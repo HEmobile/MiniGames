@@ -15,10 +15,15 @@ public class RankingsListAdapter extends BaseAdapter {
 
 	private ArrayList<GameResult> listData;
 	private LayoutInflater layoutInflater;
+	private int oddRowColor;
+	private int evenRowColor;
     
 	public RankingsListAdapter(ArrayList<GameResult> listData, Context context) {
 		this.listData = listData;
         layoutInflater = LayoutInflater.from(context);
+        
+        oddRowColor = context.getResources().getColor(R.color.OddRowGrey);
+        evenRowColor = context.getResources().getColor(R.color.EvenRowGrey);
 	}
 
 	@Override
@@ -49,7 +54,13 @@ public class RankingsListAdapter extends BaseAdapter {
         }
         
         holder.username.setText(listData.get(position).getPlayerName());
-        holder.points.setText(listData.get(position).getResult()+""); 
+        holder.points.setText(listData.get(position).getResult()+"");
+        
+        if (position%2==1) {
+        	convertView.setBackgroundColor(oddRowColor);
+        } else {
+        	convertView.setBackgroundColor(evenRowColor);
+        }
  
         return convertView;
     }

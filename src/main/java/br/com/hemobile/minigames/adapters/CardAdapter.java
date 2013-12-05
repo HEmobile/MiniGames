@@ -40,10 +40,14 @@ public class CardAdapter extends BaseAdapter {
     
     // references to our images
     private Integer[] differentCards = {
-            R.drawable.sample_0, R.drawable.sample_1,
-            R.drawable.sample_2, R.drawable.sample_3,
-            R.drawable.sample_4, R.drawable.sample_5,
-            R.drawable.sample_6, R.drawable.sample_7
+            R.drawable.pk_image_0, R.drawable.pk_image_1,
+            R.drawable.pk_image_2, R.drawable.pk_image_3,
+            R.drawable.pk_image_4, R.drawable.pk_image_5,
+            R.drawable.pk_image_6, R.drawable.pk_image_7,
+            R.drawable.pk_image_8, R.drawable.pk_image_9,
+            R.drawable.pk_image_10, R.drawable.pk_image_11,
+            R.drawable.pk_image_12, R.drawable.pk_image_13,
+            R.drawable.pk_image_14, R.drawable.pk_image_15
     };
     
     private Integer[] getCards() {

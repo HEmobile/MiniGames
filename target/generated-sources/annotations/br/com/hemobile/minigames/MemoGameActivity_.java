@@ -38,8 +38,8 @@ public final class MemoGameActivity_
     }
 
     private void afterSetContentView_() {
-        gameContainer = ((RelativeLayout) findViewById(br.com.hemobile.minigames.R.id.gameContainer));
         gridView = ((GridView) findViewById(br.com.hemobile.minigames.R.id.gridView));
+        gameContainer = ((RelativeLayout) findViewById(br.com.hemobile.minigames.R.id.gameContainer));
         init();
         baseInit();
     }
@@ -84,25 +84,11 @@ public final class MemoGameActivity_
             onBackActionBarClick();
             return true;
         }
-        return false;
-    }
-
-    @Override
-    public void finishGame() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                try {
-                    MemoGameActivity_.super.finishGame();
-                } catch (RuntimeException e) {
-                    Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
-                }
-            }
-
+        if (itemId_ == android.R.id.home) {
+            onBackActionBarClick();
+            return true;
         }
-        );
+        return false;
     }
 
     @Override
@@ -132,6 +118,24 @@ public final class MemoGameActivity_
             public void run() {
                 try {
                     MemoGameActivity_.super.addPoints();
+                } catch (RuntimeException e) {
+                    Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void finishGame() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                try {
+                    MemoGameActivity_.super.finishGame();
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }

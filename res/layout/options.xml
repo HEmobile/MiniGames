@@ -34,4 +34,12 @@
         android:layout_below="@id/btnRestartRankings"
         android:text="@string/btn_email_contact_list" />
     
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/main_logo"
+        android:contentDescription="@string/main_logo_description" />
+    
 </RelativeLayout>

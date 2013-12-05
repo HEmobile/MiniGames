@@ -5,7 +5,9 @@ import java.util.concurrent.TimeUnit;
 import br.com.hemobile.gui.BaseActivity;
 import br.com.hemobile.minigames.adapters.CardAdapter;
 import br.com.hemobile.minigames.db.DataLayer;
-import br.com.hemobile.minigames.fragments.UserDataFormDialog;
+import br.com.hemobile.minigames.fragments.BooleanDialog;
+import br.com.hemobile.minigames.fragments.BooleanDialog.BooleanDialogListener;
+import br.com.hemobile.minigames.fragments.FinishGameDialog;
 
 import com.googlecode.androidannotations.annotations.*;
 import com.tekle.oss.android.animation.AnimationFactory;
@@ -14,7 +16,6 @@ import com.tekle.oss.android.animation.AnimationFactory.FlipDirection;
 import android.annotation.SuppressLint;
 import android.app.DialogFragment;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
@@ -30,7 +31,7 @@ import android.widget.ViewFlipper;
 
 @OptionsMenu(R.menu.score_bar)
 @EActivity(R.layout.memo_game)
-public class MemoGameActivity extends BaseActivity implements UserDataFormDialog.UserDataFormDialogListener {
+public class MemoGameActivity extends BaseActivity implements FinishGameDialog.UserDataFormDialogListener,BooleanDialogListener {
 
 	@ViewById
 	GridView gridView;
@@ -88,6 +89,7 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	}
 	
 	private void startTimer() {
+		if (timeToPlay < 1000) return;
 		new CountDownTimer(timeToPlay, 1000) {
 
 			public void onTick(long millisUntilFinished) {
@@ -123,8 +125,8 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	
 	@UiThread
 	void finishGame() {
-		DialogFragment userDataForm = UserDataFormDialog.getInstance(Integer.valueOf(score.getText().toString()), millisecondsLeft, level);
-		userDataForm.show(getFragmentManager(), "User Data Form");
+		DialogFragment dialog = FinishGameDialog.getInstance(Integer.valueOf(score.getText().toString()), millisecondsLeft, level);
+		dialog.show(getFragmentManager(), "Finish Game");
 	}
 	
 	void finishedRightCardsAnimation() {
@@ -135,7 +137,7 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	}
 	
 	@Override
-    public void onDialogPositiveClick(UserDataFormDialog dialog) {
+    public void onDialogPositiveClick(FinishGameDialog dialog) {
 		Log.i("Dialog returned name", dialog.username.getText().toString());
  	   	Log.i("Dialog returned email", dialog.userEmail.getText().toString());
  	   	
@@ -148,11 +150,24 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
     }
 
     @Override
-    public void onDialogNegativeClick(UserDataFormDialog dialog) {
+    public void onDialogNegativeClick(FinishGameDialog dialog) {
     	dialog.dismiss();
     	NavUtils.navigateUpFromSameTask(this);
     }
 	
+    @OptionsItem(android.R.id.home)
+	protected void onBackActionBarClick() {
+		BooleanDialog dialog = BooleanDialog.getInstance(getString(R.string.leave_game_confirmation));
+		dialog.show(getFragmentManager(), "Abandon Game");
+	}
+    
+    @Override
+    public void onDialogPositiveClick(BooleanDialog dialog) {
+    	Log.i("Abandon Game", "OK PRessed");
+    	dialog.dismiss();
+    	NavUtils.navigateUpFromSameTask(this);
+    }
+    
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
@@ -175,6 +190,7 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
         public void run() {
         	AnimationFactory.flipTransition(card, FlipDirection.LEFT_RIGHT);
         	AnimationFactory.flipTransition(card2, FlipDirection.LEFT_RIGHT);
+        	gridView.removeCallbacks(this);
         }
     }
 	
@@ -190,6 +206,7 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
         	Integer newScore = Integer.valueOf(score.getText().toString())+cardsMatchPoints;
 			score.setText(newScore.toString());
 			finishedRightCardsAnimation();
+			gridView.removeCallbacks(this);
         	//card.setVisibility(View.INVISIBLE);
         	//card2.setVisibility(View.INVISIBLE);
         }

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_marginLeft="30dp"
     android:layout_marginRight="30dp"
-    android:layout_marginTop="30dp" >
+    android:layout_marginTop="20dp" >
 
     <TextView
         android:id="@+id/hello_view"
@@ -14,7 +14,8 @@
         android:gravity="center"
         android:text="@string/hello"
         android:layout_alignParentTop="true"
-        android:textSize="15dp" />
+        android:textColor="@color/White"
+        android:textSize="20dp" />
 
     <Button
         android:id="@+id/btnLevel1"
@@ -43,14 +44,15 @@
         android:layout_below="@id/btnLevel2"
         android:text="@string/btn_level_3" />
     
-    <Button
-        android:id="@+id/btnOptions"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/mainLogo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:text="@string/btn_options" />
+        android:layout_below="@id/btnLevel3"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp"
+        android:src="@drawable/main_logo"
+        android:contentDescription="@string/main_logo_description" />
     
     <Button
         android:id="@+id/btnRanking"
@@ -58,6 +60,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal"
-        android:layout_above="@id/btnOptions"
+        android:layout_below="@id/mainLogo"
         android:text="@string/btn_ranking" />
+    
+    <Button
+        android:id="@+id/btnOptions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/btnRanking"
+        android:text="@string/btn_options" />
+    
 </RelativeLayout>

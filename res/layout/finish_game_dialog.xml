@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+	    android:layout_height="@dimen/finish_text_box"
+	    android:layout_gravity="center_horizontal"
+	    android:gravity="center_horizontal">
+	    <TextView android:id="@+id/finish_game_text1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_alignParentLeft="true"
+	        android:gravity="center_vertical"
+	        android:textSize="@dimen/big_text_size"
+	        android:text="@string/dialog_text1"
+	        android:layout_margin="3dp"/>
+	    <TextView android:id="@+id/finish_game_score"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:textColor="@color/HERed"
+	        android:layout_toRightOf="@id/finish_game_text1"
+	        android:textSize="@dimen/score_text_size"/>
+	    <TextView android:id="@+id/finish_game_text2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical"
+	        android:layout_margin="3dp"
+	        android:layout_toRightOf="@id/finish_game_score"
+	        android:textSize="@dimen/big_text_size"
+	        android:text="@string/dialog_text2"/>
+    </RelativeLayout>
+    <TextView android:id="@+id/finish_game_text3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:layout_gravity="center_horizontal"
+	        android:textSize="@dimen/big_text_size"
+	        android:text="@string/dialog_text3"/>
+    <EditText
+        android:id="@+id/username"
+        android:inputType="textPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/user_name_hint" />
+    
+    <EditText
+        android:id="@+id/userEmail"
+        android:inputType="textEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:hint="@string/user_email_hint" />
+</LinearLayout>
