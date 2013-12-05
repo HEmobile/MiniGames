@@ -5,8 +5,4 @@
         android:title="My Score"
         android:actionLayout="@layout/score"
         />
-    <item android:id="@+id/previewMenuBtn"
-	      android:icon="@drawable/previewglyph"
-	      android:title="@string/btn_ranking"
-	      android:showAsAction="always"/>
 </menu>

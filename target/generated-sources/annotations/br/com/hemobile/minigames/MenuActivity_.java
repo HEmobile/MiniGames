@@ -16,8 +16,8 @@ import android.widget.TextView;
 import br.com.hemobile.minigames.R.id;
 import br.com.hemobile.minigames.R.layout;
 
-public final class HelloActivity_
-    extends HelloActivity
+public final class MenuActivity_
+    extends MenuActivity
 {
 
 
@@ -34,6 +34,21 @@ public final class HelloActivity_
     private void afterSetContentView_() {
         helloView = ((TextView) findViewById(id.hello_view));
         {
+            View view = findViewById(id.btnLevel2);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MenuActivity_.this.btnLevel2();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             View view = findViewById(id.btnLevel3);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -41,7 +56,7 @@ public final class HelloActivity_
 
                     @Override
                     public void onClick(View view) {
-                        HelloActivity_.this.btnLevel3();
+                        MenuActivity_.this.btnLevel3();
                     }
 
                 }
@@ -56,7 +71,7 @@ public final class HelloActivity_
 
                     @Override
                     public void onClick(View view) {
-                        HelloActivity_.this.btnLevel1();
+                        MenuActivity_.this.btnLevel1();
                     }
 
                 }
@@ -64,14 +79,14 @@ public final class HelloActivity_
             }
         }
         {
-            View view = findViewById(id.btnLevel2);
+            View view = findViewById(id.btnOptions);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
                     public void onClick(View view) {
-                        HelloActivity_.this.btnLevel2();
+                        MenuActivity_.this.btnOptions();
                     }
 
                 }
@@ -86,7 +101,7 @@ public final class HelloActivity_
 
                     @Override
                     public void onClick(View view) {
-                        HelloActivity_.this.btnRanking();
+                        MenuActivity_.this.btnRanking();
                     }
 
                 }
@@ -114,8 +129,8 @@ public final class HelloActivity_
         afterSetContentView_();
     }
 
-    public static HelloActivity_.IntentBuilder_ intent(Context context) {
-        return new HelloActivity_.IntentBuilder_(context);
+    public static MenuActivity_.IntentBuilder_ intent(Context context) {
+        return new MenuActivity_.IntentBuilder_(context);
     }
 
     public static class IntentBuilder_ {
@@ -125,14 +140,14 @@ public final class HelloActivity_
 
         public IntentBuilder_(Context context) {
             context_ = context;
-            intent_ = new Intent(context, HelloActivity_.class);
+            intent_ = new Intent(context, MenuActivity_.class);
         }
 
         public Intent get() {
             return intent_;
         }
 
-        public HelloActivity_.IntentBuilder_ flags(int flags) {
+        public MenuActivity_.IntentBuilder_ flags(int flags) {
             intent_.setFlags(flags);
             return this;
         }

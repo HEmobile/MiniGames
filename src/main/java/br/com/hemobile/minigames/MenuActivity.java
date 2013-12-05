@@ -12,7 +12,7 @@ import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.main)
-public class HelloActivity extends Activity {
+public class MenuActivity extends Activity {
 
 	@ViewById
 	TextView helloView;
@@ -24,29 +24,34 @@ public class HelloActivity extends Activity {
 	
 	@Click
 	public void btnLevel1() {
-		//helloView.setText("You clicked it! Nice!");
-		Intent i = new Intent(HelloActivity.this, MemoGameActivity_.class);
+		Intent i = new Intent(MenuActivity.this, MemoGameActivity_.class);
 		i.putExtra("level", 1);
 		startActivity(i);
 	}
 	
 	@Click
 	public void btnLevel2() {
-		Intent i = new Intent(HelloActivity.this, MemoGameActivity_.class);
+		Intent i = new Intent(MenuActivity.this, MemoGameActivity_.class);
 		i.putExtra("level", 2);
 		startActivity(i);
 	}
 	
 	@Click
 	public void btnLevel3() {
-		Intent i = new Intent(HelloActivity.this, MemoGameActivity_.class);
+		Intent i = new Intent(MenuActivity.this, MemoGameActivity_.class);
 		i.putExtra("level", 3);
 		startActivity(i);
 	}
 	
 	@Click
 	public void btnRanking() {
-		Intent i = new Intent(HelloActivity.this, RankingsActivity_.class);
+		Intent i = new Intent(MenuActivity.this, RankingsActivity_.class);
+		startActivity(i);
+	}
+	
+	@Click
+	public void btnOptions() {
+		Intent i = new Intent(MenuActivity.this, OptionsActivity_.class);
 		startActivity(i);
 	}
 }

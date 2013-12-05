@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.text.SpannableString;
 import android.view.inputmethod.InputMethodManager;
 
@@ -103,7 +104,8 @@ public abstract class BaseActivity extends Activity {
 
 	@OptionsItem(android.R.id.home)
 	protected void onBackActionBarClick() {
-		onBackPressed();
+		//onBackPressed();
+		NavUtils.navigateUpFromSameTask(this);
 	}
 
 	public void update() {

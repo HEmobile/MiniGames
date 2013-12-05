@@ -16,6 +16,12 @@ public class RankingsActivity extends BaseActivity {
 	@ViewById 
 	ListView level1Rankings;
 	
+	@ViewById 
+	ListView level2Rankings;
+	
+	@ViewById 
+	ListView level3Rankings;
+	
 	public RankingsActivity() {
 		// TODO Auto-generated constructor stub
 	}
@@ -24,6 +30,8 @@ public class RankingsActivity extends BaseActivity {
 	public void init() {
 		DataLayer dataLayer = new DataLayer(this);
 		dataLayer.addMemoStartData();
-		level1Rankings.setAdapter(new RankingsListAdapter(dataLayer.memoGamesList(),this));
+		level1Rankings.setAdapter(new RankingsListAdapter(dataLayer.memoGamesList("1"),this));
+		level2Rankings.setAdapter(new RankingsListAdapter(dataLayer.memoGamesList("2"),this));
+		level3Rankings.setAdapter(new RankingsListAdapter(dataLayer.memoGamesList("3"),this));
 	}
 }

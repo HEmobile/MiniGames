@@ -6,6 +6,10 @@
     <string name="btn_level_2">Normal</string>
     <string name="btn_level_3">Hard</string>
     <string name="btn_ranking">Ranking</string>
+    <string name="btn_options">Opções</string>
+    
+    <string name="btn_restart_rankings">Restart Rankings</string>
+    <string name="btn_email_contact_list">Email Contact List</string>
     
     <string name="user_email_hint">Email</string>
     <string name="user_name_hint">Name</string>
@@ -13,4 +17,16 @@
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancelar</string>
     <string name="dialog_text">Você fez %@ pontos! Parabéns! \n Preencha seus dados para entrar no ranking.</string>
+    
+    <string name="timer_starting_value">10:00</string>
+    <string name="points_starting_value">0000000</string>
+    <string name="bonus_starting_value">0000000</string>
+    
+    <string name="memo_activity_title">Memory Game</string>
+    
+    <string name="boolean_dialog_ok">OK</string>
+    <string name="boolean_dialog_cancel">Cancel</string>
+    
+    <string name="restart_rankings_text">Todos os dados de jogos serão perdidos e os rankings serão preenchidos pelos dados padrão.</string>
+    <string name="email_contact_text">Lista de Contatos: \n\n</string>
 </resources>

@@ -10,7 +10,7 @@ public class MemoGameHelper {
 		int numberOfCards;
 		switch (level) {
 		case 1:
-			numberOfCards = 4;
+			numberOfCards = 2;
 			break;
 		case 2:
 			numberOfCards = 6;
@@ -26,22 +26,60 @@ public class MemoGameHelper {
 	}
 	
 	public static int cardsMatchPoints(int level) {
-		int numberOfCards;
+		int points;
 		switch (level) {
 		case 1:
-			numberOfCards = 500;
+			points = 500;
 			break;
 		case 2:
-			numberOfCards = 1000;
+			points = 1000;
 			break;
 		case 3:
-			numberOfCards = 2000;
+			points = 2000;
 			break;
 		default:
-			numberOfCards = 1000;
+			points = 1000;
 			break;
 		}
-		return numberOfCards;
+		return points;
+	}
+	
+	public static long milliSecondsToPlay(int level) {
+		long timeToPlay; //in seconds
+		switch (level) {
+		case 1:
+			timeToPlay = 60; 
+			break;
+		case 2:
+			timeToPlay = 120;
+			break;
+		case 3:
+			timeToPlay = 180;
+			break;
+		default:
+			timeToPlay = 60;
+			break;
+		}
+		return timeToPlay*1000;
+	}
+	
+	public static int bonusPerSecondLeft(int level) {
+		int bonus; //in seconds
+		switch (level) {
+		case 1:
+			bonus = 50; 
+			break;
+		case 2:
+			bonus = 75;
+			break;
+		case 3:
+			bonus = 100;
+			break;
+		default:
+			bonus = 50;
+			break;
+		}
+		return bonus;
 	}
 
 }

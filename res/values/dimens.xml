@@ -1,5 +1,9 @@
 <resources>
-
+	<!-- Body Texts -->
     <dimen name="big_text_size">16dp</dimen>
     <dimen name="normal_text_size">14dp</dimen>
+    
+    <!-- ActionBar Texts -->
+    <dimen name="bar_big_text">18dp</dimen>
+    <dimen name="bar_normal_text">16dp</dimen>
 </resources>

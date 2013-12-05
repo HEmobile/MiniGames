@@ -11,12 +11,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.ListView;
 import br.com.hemobile.minigames.R.layout;
 
-public final class RankingsActivity_
-    extends RankingsActivity
+public final class OptionsActivity_
+    extends OptionsActivity
 {
 
 
@@ -24,7 +24,7 @@ public final class RankingsActivity_
     public void onCreate(Bundle savedInstanceState) {
         init_(savedInstanceState);
         super.onCreate(savedInstanceState);
-        setContentView(layout.rankings);
+        setContentView(layout.options);
     }
 
     private void init_(Bundle savedInstanceState) {
@@ -32,9 +32,36 @@ public final class RankingsActivity_
     }
 
     private void afterSetContentView_() {
-        level3Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level3Rankings));
-        level2Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level2Rankings));
-        level1Rankings = ((ListView) findViewById(br.com.hemobile.minigames.R.id.level1Rankings));
+        {
+            View view = findViewById(br.com.hemobile.minigames.R.id.btnEmailContactList);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        OptionsActivity_.this.btnEmailContactList();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(br.com.hemobile.minigames.R.id.btnRestartRankings);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        OptionsActivity_.this.btnRestartRankings();
+                    }
+
+                }
+                );
+            }
+        }
         init();
         baseInit();
     }
@@ -57,8 +84,8 @@ public final class RankingsActivity_
         afterSetContentView_();
     }
 
-    public static RankingsActivity_.IntentBuilder_ intent(Context context) {
-        return new RankingsActivity_.IntentBuilder_(context);
+    public static OptionsActivity_.IntentBuilder_ intent(Context context) {
+        return new OptionsActivity_.IntentBuilder_(context);
     }
 
     @Override
@@ -95,14 +122,14 @@ public final class RankingsActivity_
 
         public IntentBuilder_(Context context) {
             context_ = context;
-            intent_ = new Intent(context, RankingsActivity_.class);
+            intent_ = new Intent(context, OptionsActivity_.class);
         }
 
         public Intent get() {
             return intent_;
         }
 
-        public RankingsActivity_.IntentBuilder_ flags(int flags) {
+        public OptionsActivity_.IntentBuilder_ flags(int flags) {
             intent_.setFlags(flags);
             return this;
         }

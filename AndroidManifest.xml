@@ -14,21 +14,43 @@
         android:label="@string/app_name"
         android:allowBackup="true" >
         <activity 
-            android:name=".HelloActivity_" 
+            android:name=".MenuActivity_" 
             android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="br.com.hemobile.minigames.MemoGameActivity_"
-            android:screenOrientation="landscape" >
+            android:label="Jogo"
+            android:screenOrientation="landscape"
+            android:noHistory="true"
+            android:parentActivityName=".MenuActivity_" >
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuActivity_" />
         </activity>
         <activity
             android:name="br.com.hemobile.minigames.RankingsActivity_"
-            android:screenOrientation="landscape" >
+            android:label="Rankings"
+            android:screenOrientation="landscape"
+            android:parentActivityName=".MenuActivity_" >
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuActivity_" />
+        </activity>
+        <activity
+            android:name="br.com.hemobile.minigames.OptionsActivity_"
+            android:label="Opções"
+            android:screenOrientation="landscape"
+            android:parentActivityName=".MenuActivity_" >
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuActivity_" />
         </activity>
     </application>
 

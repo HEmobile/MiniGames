@@ -1,13 +1,84 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
 
-    <ListView
-        android:id="@+id/level1Rankings"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_margin="10dp"
-    />
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_margin="10dp"
+		android:orientation="vertical"
+		android:layout_weight="1">
+	    
+        <TextView 
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:textSize="@dimen/big_text_size"
+	        android:textColor="@color/White"
+	        android:gravity="center_horizontal"
+	        android:text="@string/btn_level_1"
+	        android:background="@color/DarkGrey"
+    	/>
     
-</RelativeLayout>
+		<ListView
+			android:id="@+id/level1Rankings"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/White"
+		/>
+    </LinearLayout>
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_margin="10dp"
+		android:orientation="vertical"
+		android:layout_weight="1">
+	    
+        <TextView 
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:textSize="@dimen/big_text_size"
+	        android:textColor="@color/White"
+	        android:gravity="center_horizontal"
+	        android:text="@string/btn_level_2"
+	        android:background="@color/DarkGrey"
+    	/>
+    
+		<ListView
+			android:id="@+id/level2Rankings"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/White"
+		/>
+    </LinearLayout>
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_margin="10dp"
+		android:orientation="vertical"
+		android:layout_weight="1">
+	    
+        <TextView 
+            android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="5dp"
+	        android:textSize="@dimen/big_text_size"
+	        android:textColor="@color/White"
+	        android:gravity="center_horizontal"
+	        android:text="@string/btn_level_3"
+	        android:background="@color/DarkGrey"
+    	/>
+    
+		<ListView
+			android:id="@+id/level3Rankings"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/White"
+		/>
+    </LinearLayout>
+</LinearLayout>

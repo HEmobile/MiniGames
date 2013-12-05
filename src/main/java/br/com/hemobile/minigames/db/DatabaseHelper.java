@@ -12,6 +12,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	 
 	private static final String DATABASE_NAME = "mini_games.db";
 	private static final int DATABASE_VERSION = 1;
+	
+	public static final String MEMO_GAME_TABLE = "memo_games";
 	 
 	public static DatabaseHelper getInstance(Context context) {
 		// Use the application context, which will ensure that you 
@@ -42,8 +44,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		String sql = "create table memo_games " +
-                "(PlayerId text primary key, " +
+                "(GameId integer primary key, " +
                 "PlayerName text, " +
+                "PlayerEmail text, " +
                 "Result integer, " +
                 "PlayTime integer, " +
                 "Difficulty integer); ";

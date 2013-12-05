@@ -28,6 +28,12 @@ public final class R {
         public static final int White50=0x7f04000a;
     }
     public static final class dimen {
+        /**  ActionBar Texts 
+         */
+        public static final int bar_big_text=0x7f050002;
+        public static final int bar_normal_text=0x7f050003;
+        /**  Body Texts 
+         */
         public static final int big_text_size=0x7f050000;
         public static final int normal_text_size=0x7f050001;
     }
@@ -46,25 +52,31 @@ public final class R {
     }
     public static final class id {
         public static final int backImage=0x7f090001;
-        public static final int bonus_text=0x7f09000f;
+        public static final int bonus_text=0x7f090014;
+        public static final int btnEmailContactList=0x7f09000c;
         public static final int btnLevel1=0x7f090004;
         public static final int btnLevel2=0x7f090005;
         public static final int btnLevel3=0x7f090006;
-        public static final int btnRanking=0x7f090007;
-        public static final int finish_game_text=0x7f090010;
+        public static final int btnOptions=0x7f090007;
+        public static final int btnRanking=0x7f090008;
+        public static final int btnRestartRankings=0x7f09000b;
+        public static final int finish_game_text=0x7f090017;
         public static final int flipper=0x7f090000;
         public static final int frontImage=0x7f090002;
-        public static final int gameContainer=0x7f090008;
-        public static final int gridView=0x7f090009;
+        public static final int gameContainer=0x7f090009;
+        public static final int gridView=0x7f09000a;
         public static final int hello_view=0x7f090003;
-        public static final int level1Rankings=0x7f09000a;
-        public static final int points=0x7f09000c;
-        public static final int previewMenuBtn=0x7f090013;
-        public static final int score_container=0x7f09000d;
-        public static final int score_item=0x7f090012;
-        public static final int score_text=0x7f09000e;
-        public static final int userEmail=0x7f090011;
-        public static final int username=0x7f09000b;
+        public static final int level1Rankings=0x7f09000d;
+        public static final int level2Rankings=0x7f09000e;
+        public static final int level3Rankings=0x7f09000f;
+        public static final int my_title=0x7f090016;
+        public static final int points=0x7f090011;
+        public static final int score_container=0x7f090012;
+        public static final int score_item=0x7f090019;
+        public static final int score_text=0x7f090013;
+        public static final int timer_text=0x7f090015;
+        public static final int userEmail=0x7f090018;
+        public static final int username=0x7f090010;
     }
     public static final class integer {
         public static final int card_flip_time_full=0x7f060000;
@@ -74,25 +86,37 @@ public final class R {
         public static final int card=0x7f030000;
         public static final int main=0x7f030001;
         public static final int memo_game=0x7f030002;
-        public static final int rankings=0x7f030003;
-        public static final int rankings_row=0x7f030004;
-        public static final int score=0x7f030005;
-        public static final int user_data_form=0x7f030006;
+        public static final int options=0x7f030003;
+        public static final int rankings=0x7f030004;
+        public static final int rankings_row=0x7f030005;
+        public static final int score=0x7f030006;
+        public static final int user_data_form=0x7f030007;
     }
     public static final class menu {
         public static final int score_bar=0x7f080000;
     }
     public static final class string {
         public static final int app_name=0x7f070000;
+        public static final int bonus_starting_value=0x7f070010;
+        public static final int boolean_dialog_cancel=0x7f070013;
+        public static final int boolean_dialog_ok=0x7f070012;
+        public static final int btn_email_contact_list=0x7f070008;
         public static final int btn_level_1=0x7f070002;
         public static final int btn_level_2=0x7f070003;
         public static final int btn_level_3=0x7f070004;
+        public static final int btn_options=0x7f070006;
         public static final int btn_ranking=0x7f070005;
-        public static final int dialog_cancel=0x7f070009;
-        public static final int dialog_ok=0x7f070008;
-        public static final int dialog_text=0x7f07000a;
+        public static final int btn_restart_rankings=0x7f070007;
+        public static final int dialog_cancel=0x7f07000c;
+        public static final int dialog_ok=0x7f07000b;
+        public static final int dialog_text=0x7f07000d;
+        public static final int email_contact_text=0x7f070015;
         public static final int hello=0x7f070001;
-        public static final int user_email_hint=0x7f070006;
-        public static final int user_name_hint=0x7f070007;
+        public static final int memo_activity_title=0x7f070011;
+        public static final int points_starting_value=0x7f07000f;
+        public static final int restart_rankings_text=0x7f070014;
+        public static final int timer_starting_value=0x7f07000e;
+        public static final int user_email_hint=0x7f070009;
+        public static final int user_name_hint=0x7f07000a;
     }
 }

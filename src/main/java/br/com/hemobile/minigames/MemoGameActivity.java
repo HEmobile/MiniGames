@@ -1,5 +1,7 @@
 package br.com.hemobile.minigames;
 
+import java.util.concurrent.TimeUnit;
+
 import br.com.hemobile.gui.BaseActivity;
 import br.com.hemobile.minigames.adapters.CardAdapter;
 import br.com.hemobile.minigames.db.DataLayer;
@@ -9,9 +11,12 @@ import com.googlecode.androidannotations.annotations.*;
 import com.tekle.oss.android.animation.AnimationFactory;
 import com.tekle.oss.android.animation.AnimationFactory.FlipDirection;
 
+import android.annotation.SuppressLint;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +41,9 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	ViewFlipper selectedCard;
 	TextView score;
 	TextView bonus;
+	TextView timer;
+	long millisecondsLeft;
+	long timeToPlay;
 	int differentCards = 0;
 	int level;
 	int cardsMatchPoints;
@@ -47,6 +55,8 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 		level = i.getIntExtra("level", 1);
 		differentCards = MemoGameHelper.numberOfCardsPair(level);
 		cardsMatchPoints = MemoGameHelper.cardsMatchPoints(level);
+		timeToPlay = MemoGameHelper.milliSecondsToPlay(level);
+		millisecondsLeft = timeToPlay;
 		// Called after onCreate method
 		gridView.setAdapter(new CardAdapter(this,level));
 		
@@ -72,23 +82,38 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	        	}
 	        }
 	    });
+		Log.i("init", "AfterViews");
+		startTimer();
 		//addPoints();
 	}
 	
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.previewMenuBtn:
-				DialogFragment userDataForm = new UserDataFormDialog();
-				Bundle args = new Bundle();
-			    args.putString("points", "1500");
-				userDataForm.setArguments(args);
-				userDataForm.show(getFragmentManager(), "User Data Form");
-				break;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
-		return true;
+	private void startTimer() {
+		new CountDownTimer(timeToPlay, 1000) {
+
+			public void onTick(long millisUntilFinished) {
+				//mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+				millisecondsLeft = millisUntilFinished;
+				displayTimeLeft(millisUntilFinished);
+			}
+
+			public void onFinish() {
+				timer.setText("0:00");
+				millisecondsLeft = 0;
+				finishGame();
+				//mTextField.setText("done!");
+			}
+		}.start();
+	}
+	
+	@SuppressLint("DefaultLocale")
+	@UiThread
+	void displayTimeLeft(long milliSeconds) {
+		String time = String.format("%d:%02d", 
+			    TimeUnit.MILLISECONDS.toMinutes(milliSeconds),
+			    TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - 
+			    TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds))
+			);
+		timer.setText(time);
 	}
 	
 	@UiThread
@@ -97,14 +122,15 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	}
 	
 	@UiThread
+	void finishGame() {
+		DialogFragment userDataForm = UserDataFormDialog.getInstance(Integer.valueOf(score.getText().toString()), millisecondsLeft, level);
+		userDataForm.show(getFragmentManager(), "User Data Form");
+	}
+	
 	void finishedRightCardsAnimation() {
 		differentCards--;
 		if (differentCards == 0) {
-			DialogFragment userDataForm = new UserDataFormDialog();
-			Bundle args = new Bundle();
-		    args.putString("points", score.getText().toString());
-			userDataForm.setArguments(args);
-			userDataForm.show(getFragmentManager(), "User Data Form");
+			finishGame();
 		}
 	}
 	
@@ -114,11 +140,17 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
  	   	Log.i("Dialog returned email", dialog.userEmail.getText().toString());
  	   	
  	   	DataLayer dao = new DataLayer(this);
- 	   	dao.addMemoGame(dialog.userEmail.getText().toString(), dialog.username.getText().toString(), Integer.valueOf(score.getText().toString()), 150, level);
+ 	   	dao.addMemoGame(dialog.userEmail.getText().toString(), dialog.username.getText().toString(), dialog.finalPoints, dialog.secondsLeft, level);
+ 	   	dialog.dismiss();
+ 	   	
+ 	   	Intent i = new Intent(MemoGameActivity.this, RankingsActivity_.class);
+ 	   	startActivity(i);
     }
 
     @Override
     public void onDialogNegativeClick(UserDataFormDialog dialog) {
+    	dialog.dismiss();
+    	NavUtils.navigateUpFromSameTask(this);
     }
 	
 	
@@ -126,8 +158,12 @@ public class MemoGameActivity extends BaseActivity implements UserDataFormDialog
 	public boolean onPrepareOptionsMenu(Menu menu) {
 	    MenuItem item = menu.findItem(R.id.score_item);
 	    score = (TextView)item.getActionView().findViewById(R.id.score_text);
-	    bonus = (TextView)item.getActionView().findViewById(R.id.bonus_text);
 	    score.setText("0");
+	    
+	    bonus = (TextView)item.getActionView().findViewById(R.id.bonus_text);
+	    bonus.setText("+"+cardsMatchPoints);
+	    timer = (TextView)item.getActionView().findViewById(R.id.timer_text);
+	    displayTimeLeft(timeToPlay);
 	    
 	    return super.onPrepareOptionsMenu(menu);
 	}

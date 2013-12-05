@@ -1,26 +1,27 @@
 package br.com.hemobile.minigames.model;
 
 public class GameResult {
-	private String playerId;
+	private int gameId;
 	private String playerName;
+	private String playerEmail;
 	private int result;
 	private int playTime;
 	private int difficulty;
     
-	public GameResult(String playerId, String playerName, int result, int playTime, int difficulty) {
-        this.playerId = playerId;
+	public GameResult(int gameId, String playerName, String playerEmail, int result, int playTime, int difficulty) {
+        this.gameId = gameId;
         this.playerName = playerName;
         this.result = result;
         this.playTime = playTime;
         this.difficulty = difficulty;
     }
 
-	public String getPlayerId() {
-		return playerId;
+	public int getPlayerId() {
+		return gameId;
 	}
 
-	public void setPlayerId(String playerId) {
-		this.playerId = playerId;
+	public void setPlayerId(int playerId) {
+		this.gameId = playerId;
 	}
 
 	public String getPlayerName() {
@@ -29,6 +30,14 @@ public class GameResult {
 
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
+	}
+	
+	public String getPlayerEmail() {
+		return playerEmail;
+	}
+
+	public void setPlayerEmail(String playerEmail) {
+		this.playerEmail = playerEmail;
 	}
 
 	public int getResult() {

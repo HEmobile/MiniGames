@@ -1,5 +1,9 @@
 package br.com.hemobile.minigames.fragments;
 
+import com.googlecode.androidannotations.annotations.EFragment;
+import com.googlecode.androidannotations.annotations.UiThread;
+
+import br.com.hemobile.minigames.MemoGameHelper;
 import br.com.hemobile.minigames.R;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -13,16 +17,33 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+@EFragment
 public class UserDataFormDialog extends DialogFragment {
 
 	//private EditText username;
 	//private EditText userEmail;
-	private String points;
+	private int points;
+	private int bonusPerSecond;
+	
+	public int secondsLeft;
 	public EditText username;
     public EditText userEmail;
+    public int finalPoints;
+    TextView textDetails;
 
 	public UserDataFormDialog() {
 		
+	}
+	
+	public static UserDataFormDialog getInstance(int points, long millisecondsLeft, int level) {
+		UserDataFormDialog userDataForm = new UserDataFormDialog();
+		Bundle args = new Bundle();
+	    args.putInt("points", points);
+	    args.putInt("secondsLeft", (int)(millisecondsLeft/1000));
+	    args.putInt("level", level);
+		userDataForm.setArguments(args);
+		
+		return userDataForm;
 	}
 	
 	public interface UserDataFormDialogListener {
@@ -41,11 +62,20 @@ public class UserDataFormDialog extends DialogFragment {
 	    View layoutView = inflater.inflate(R.layout.user_data_form, null);
 	    username = (EditText) layoutView.findViewById(R.id.username);
 	    userEmail = (EditText) layoutView.findViewById(R.id.userEmail);
-	    points = getArguments().getString("points");
+	    points = getArguments().getInt("points");
+	    secondsLeft = getArguments().getInt("secondsLeft");
+	    Log.i("SecondsLeft", ""+secondsLeft);
+	    bonusPerSecond = MemoGameHelper.bonusPerSecondLeft(getArguments().getInt("level"));
+	    
+	    finalPoints = points + bonusPerSecond*secondsLeft;
+	    
 	    String text = getString(R.string.dialog_text);
-	    text = text.replace("%@", points);
-	    TextView textDetails = (TextView) layoutView.findViewById(R.id.finish_game_text);
+	    text = text.replace("%@", points+"");
+	    textDetails = (TextView) layoutView.findViewById(R.id.finish_game_text);
 	    textDetails.setText(text);
+	    
+	    textDetails.postDelayed(new AddBonusPointsRunnable(points, bonusPerSecond, secondsLeft), 1000);
+	    
 	    // Inflate and set the layout for the dialog
 	    // Pass null as the parent view because its going in the dialog layout
 	    builder.setView(layoutView)
@@ -60,7 +90,7 @@ public class UserDataFormDialog extends DialogFragment {
 	           .setNegativeButton(R.string.dialog_cancel, new DialogInterface.OnClickListener() {
 	               public void onClick(DialogInterface dialog, int id) {
 	            	   mListener.onDialogNegativeClick(UserDataFormDialog.this);
-	            	   UserDataFormDialog.this.getDialog().cancel();
+	            	   //UserDataFormDialog.this.getDialog().cancel();
 	               }
 	           });      
 	    return builder.create();
@@ -78,6 +108,34 @@ public class UserDataFormDialog extends DialogFragment {
             // The activity doesn't implement the interface, throw exception
             throw new ClassCastException(activity.toString()
                     + " must implement UserDataFormDialogListener");
+        }
+    }
+    
+    @UiThread
+    void addBonusPoints(int oldPoints, int bonusPoints) {
+    	Log.i("BonusPoints", "Adding");
+    	this.points = oldPoints + bonusPoints;
+    	
+    	String text = textDetails.getText().toString();
+	    text = text.replace(oldPoints+"", this.points+"");
+	    textDetails.setText(text);
+    }
+    
+    class AddBonusPointsRunnable implements Runnable {
+		int currentPoints;
+		int bonusPerSecond;
+		long currentSecondsLeft;
+		AddBonusPointsRunnable(int currentPoints, int bonusPerSecond, long secondsLeft) { this.currentPoints = currentPoints; this.bonusPerSecond = bonusPerSecond; this.currentSecondsLeft = secondsLeft;}
+        public void run() {
+        	addBonusPoints(currentPoints, bonusPerSecond);
+        	currentPoints += this.bonusPerSecond;
+        	currentSecondsLeft--;
+        	Log.i("SecondsLeft", ""+currentSecondsLeft);
+        	if (currentSecondsLeft > 0) {
+        		textDetails.postDelayed(this, 100);
+        	} else {
+        		Log.i("FinalRun", "Stopped");
+        	}
         }
     }
 
