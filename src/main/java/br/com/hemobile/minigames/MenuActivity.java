@@ -2,6 +2,7 @@ package br.com.hemobile.minigames;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.widget.TextView;
 
 import com.googlecode.androidannotations.annotations.AfterViews;
@@ -15,9 +16,43 @@ public class MenuActivity extends Activity {
 	@ViewById
 	TextView helloView;
 	
+	CountDownTimer countdown;
+	
 	@AfterViews
 	public void init() {
 		// Called after onCreate method
+		
+	}
+	
+	void stopTimer() {
+		if (countdown != null) {
+			countdown.cancel();
+			countdown = null;
+		}
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		long iddleTime = this.getResources().getInteger(R.integer.menu_idle_max_time);
+		countdown = new CountDownTimer(iddleTime, iddleTime) {
+
+			public void onFinish() {
+				btnRanking();
+			}
+
+			@Override
+			public void onTick(long millisUntilFinished) {
+				//Log.i("Tick",millisUntilFinished/1000+" seconds to finish");
+			}
+		}.start();
+	}
+	
+	@Override
+	protected void onStop() {
+		super.onStop();
+		stopTimer();
 	}
 	
 	@Click

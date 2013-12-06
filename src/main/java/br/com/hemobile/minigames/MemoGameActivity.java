@@ -43,6 +43,7 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
 	TextView score;
 	TextView bonus;
 	TextView timer;
+	CountDownTimer countdown;
 	long millisecondsLeft;
 	long timeToPlay;
 	int differentCards = 0;
@@ -90,7 +91,7 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
 	
 	private void startTimer() {
 		if (timeToPlay < 1000) return;
-		new CountDownTimer(timeToPlay, 1000) {
+		countdown = new CountDownTimer(timeToPlay, 1000) {
 
 			public void onTick(long millisUntilFinished) {
 				//mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
@@ -127,6 +128,9 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
 	
 	@UiThread
 	void finishGame() {
+		if (countdown != null) {
+			countdown.cancel();
+		}
 		DialogFragment dialog = FinishGameDialog.getInstance(Integer.valueOf(score.getText().toString()), millisecondsLeft, level);
 		dialog.show(getFragmentManager(), FinishGameDialog.getName());
 	}
@@ -167,6 +171,9 @@ public class MemoGameActivity extends BaseActivity implements FinishGameDialog.U
     public void onDialogPositiveClick(BooleanDialog dialog) {
     	Log.i("Abandon Game", "OK PRessed");
     	dialog.dismiss();
+    	if (countdown != null) {
+			countdown.cancel();
+		}
     	NavUtils.navigateUpFromSameTask(this);
     }
     

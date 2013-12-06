@@ -92,6 +92,24 @@ public final class MemoGameActivity_
     }
 
     @Override
+    public void addPoints() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                try {
+                    MemoGameActivity_.super.addPoints();
+                } catch (RuntimeException e) {
+                    Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void finishGame() {
         handler_.post(new Runnable() {
 
@@ -118,24 +136,6 @@ public final class MemoGameActivity_
             public void run() {
                 try {
                     MemoGameActivity_.super.displayTimeLeft(milliSeconds);
-                } catch (RuntimeException e) {
-                    Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
-                }
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void addPoints() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                try {
-                    MemoGameActivity_.super.addPoints();
                 } catch (RuntimeException e) {
                     Log.e("MemoGameActivity_", "A runtime exception was thrown while executing code in a runnable", e);
                 }

@@ -49,21 +49,6 @@ public final class MenuActivity_
             }
         }
         {
-            View view = findViewById(id.btnRanking);
-            if (view!= null) {
-                view.setOnClickListener(new OnClickListener() {
-
-
-                    @Override
-                    public void onClick(View view) {
-                        MenuActivity_.this.btnRanking();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             View view = findViewById(id.btnLevel3);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
@@ -102,6 +87,21 @@ public final class MenuActivity_
                     @Override
                     public void onClick(View view) {
                         MenuActivity_.this.btnLevel1();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            View view = findViewById(id.btnRanking);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MenuActivity_.this.btnRanking();
                     }
 
                 }

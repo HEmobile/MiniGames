@@ -136,6 +136,7 @@ public final class R {
     public static final class integer {
         public static final int card_flip_time_full=0x7f060000;
         public static final int card_flip_time_half=0x7f060001;
+        public static final int menu_idle_max_time=0x7f060002;
     }
     public static final class layout {
         public static final int card=0x7f030000;
