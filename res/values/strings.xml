@@ -2,21 +2,21 @@
 <resources>
     
     <!-- Menu Activity Strings -->
-    <string name="app_name">Memory, the Game</string>
-    <string name="choose_level_text">Choose your level:</string>
-    <string name="btn_level_1">Amateur</string>
+    <string name="app_name">Mémoria, o Jogo</string>
+    <string name="choose_level_text">Escolha a dificuldade:</string>
+    <string name="btn_level_1">Fácil</string>
     <string name="btn_level_2">Normal</string>
-    <string name="btn_level_3">Hard</string>
+    <string name="btn_level_3">Difícil</string>
     <string name="btn_ranking">Ranking</string>
     <string name="btn_options">Opções</string>
     
     <!-- Options Activity String -->
-    <string name="btn_restart_rankings">Restart Rankings</string>
-    <string name="btn_email_contact_list">Email Contact List</string>
+    <string name="btn_restart_rankings">Reiniciar Rankings</string>
+    <string name="btn_email_contact_list">Enviar Lista de Contatos</string>
     
     <!-- Finish Game Fragment Strings -->
     <string name="user_email_hint">Email</string>
-    <string name="user_name_hint">Name</string>
+    <string name="user_name_hint">Nome</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">Cancelar</string>
     <string name="dialog_text1">Você fez </string>
@@ -27,11 +27,11 @@
     <string name="timer_starting_value">10:00</string>
     <string name="points_starting_value">0000000</string>
     <string name="bonus_starting_value">0000000</string>
-    <string name="memo_activity_title">Memory Game</string>
+    <string name="memo_activity_title">Jogando</string>
     
     <!-- Boolean Dialog Strings -->
     <string name="boolean_dialog_ok">OK</string>
-    <string name="boolean_dialog_cancel">Cancel</string>
+    <string name="boolean_dialog_cancel">Cancelar</string>
     
     <string name="leave_game_confirmation">Você está abandonando o jogo atual, e todos seus pontos serão perdidos.</string>
     <string name="restart_rankings_text">Todos os dados de jogos serão perdidos e os rankings serão preenchidos pelos dados padrão.</string>
